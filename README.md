@@ -1,4 +1,4 @@
-# Repository Name
+# Rushing yards over expected
 
 ## Introduction
 This GitHub repository contains a Python script for analyzing NFL player performance data using the `nfl_data_py` library, focusing on rushing plays. The script calculates various statistics, including Expected Yards Over Expectation (RYOE), and identifies top-performing rushers based on these metrics. This README provides an overview of the code, how to use it, and its intended purpose.
@@ -54,7 +54,9 @@ python your_script.py
 ## Data Source
 The data used in this analysis is sourced from the `nfl_data_py` library and contains information about NFL plays and player statistics. Ensure you have access to this data source or update the code to fetch data from an appropriate source.
 
-## Methodology
+## Methodology 
+The script employs multiple linear regression to calculate Expected Yards for each rushing play. Multiple linear regression is a statistical technique that models the relationship between multiple independent variables (in this case, factors like down, yardage to go, yardline position, run location, and score differential) and the dependent variable (rushing yards gained). By fitting a regression model to the data, it estimates the coefficients for each independent variable, which quantifies their impact on the expected rushing yards. This allows us to account for the joint effects of these factors on a play's outcome, making it a powerful tool for assessing a rusher's performance beyond simple averages. The Expected Yards Over Expectation (RYOE) is then computed as the difference between the actual rushing yards and the predicted expected yards.
+
 The code in the script performs the following steps:
 1. Imports the required libraries.
 2. Imports NFL play-by-play data for a specific season (currently set to 2023).
